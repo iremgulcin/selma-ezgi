@@ -2,22 +2,23 @@
 # Dataset Card
 ---
 
-# Dataset Card for {{ pretty_name | default("Dataset Name", true) }}
+# Dataset Card for {{ pretty_name | FER 2017 }}
 
 <!-- Provide a quick summary of the dataset. -->
 
-{{ dataset_summary | default("", true) }}
+{{ dataset_summary |Dataset for emotion deduction  }}
 
 ## Dataset Details
 
 ### Dataset Description
 
-<!-- Provide a longer summary of what this dataset is. -->
+The data consists of 48x48 pixel grayscale images of faces. The faces have been automatically registered so that the face is more or less centred and occupies about the same amount of space in each image.
 
+The task is to categorize each face based on the emotion shown in the facial expression into one of seven categories (0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral). The training set consists of 28,709 examples and the public test set consists of 3,589 examples.
 {{ dataset_description | default("", true) }}
 
 - **Curated by:** {{ curators | default("[More Information Needed]", true)}}
-- **License:** {{ license | default("[More Information Needed]", true)}}
+- **License:** {{ license | Database Contents License (DbCL) v1.0, true)}}
 
 ### Dataset Sources [optional]
 
