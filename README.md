@@ -19,6 +19,9 @@ Böylece öğretmen hangi dersin daha çok anlaşıldığı veya sorun yaşandı
 
 Veri seti: kaggle datasets download -d msambare/fer2013 
 
+![image](https://github.com/iremgulcin/selma-ezgi/assets/132160283/be3840a8-8513-4373-9f17-d2d281098480)
+
+
 
 
 
