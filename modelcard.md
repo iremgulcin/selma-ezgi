@@ -1,9 +1,9 @@
 ---
 # MODEL CARD
 
-# Model Card for {{ model_id | default("Model ID", true) }}
+# Model Card for {{ model_id | Emotion deduction by AI }}
 
-<!-- Provide a quick summary of what the model is/does. -->
+These codes utilize the `MobileNetV2` model from TensorFlow's Keras API for transfer learning. The model is pretrained and then customized for facial expression recognition using the "fer2013" dataset obtained from Kaggle. The dataset comprises seven emotion classes: anger, disgust, fear, happiness, sadness, surprise, and neutral. The MobileNetV2 model is adapted by extracting some of its layers to create a new model specifically tailored for recognizing facial expressions. Additionally, OpenCV's Haar Cascade classifier with the `haarcascade_frontalface_default.xml` file is employed for face detection within the images from the "fer2013" dataset.
 
 {{ model_summary | default("", true) }}
 
@@ -11,19 +11,28 @@
 
 ### Model Description
 
-<!-- Provide a longer summary of what this model is. -->
+MobileNetV2 Model:
+
+Architecture: MobileNetV2 is a lightweight neural network architecture designed for mobile and edge devices, known for its efficiency and low computational cost.
+Purpose in Code: The MobileNetV2 model is employed for transfer learning, allowing the utilization of pre-trained weights to boost performance in facial expression recognition tasks.
+Transfer Learning: The code initializes the MobileNetV2 model, extracts certain layers, and then creates a new model for transfer learning by connecting a custom output layer for facial expression recognition.
+Haar Cascade Classifier:
+
+Purpose: The Haar Cascade classifier, part of the OpenCV library, is used for face detection within images from the "fer2013" dataset.
+File Used: The haarcascade_frontalface_default.xml file is employed as a pre-trained classifier specifically designed for detecting frontal faces.
+Functionality: This classifier works by applying a series of progressively more complex classifiers to sub-regions of the image until a face is identified or rejected.
 
 {{ model_description | default("", true) }}
 
-- **Developed by:** {{ developers | default("[More Information Needed]", true)}}
-- **Model date:** {{ model_date | default("[More Information Needed]", true)}}
-- **Model type:** {{ model_type | default("[More Information Needed]", true)}}
-- **Language(s):** {{ language | default("[More Information Needed]", true)}}
-- **Finetuned from model [optional]:** {{ base_model | default("[More Information Needed]", true)}}
+- **Developed by:** {{ developers | Selma Kınacıoğlu)}}
+- **Model date:** {{ model_date | 19-02-2024)}}
+- **Model type:** {{ model_type | Transform Learning}}
+- **Language(s):** {{ language | English)}}
+- **Finetuned from model [optional]:** {{ base_model | The Haar Cascade classifie)}}
 
 ### Model Sources [optional]
 
-<!-- Provide the basic links for the model. -->
+--
 
 - **Repository:** {{ repo | default("[More Information Needed]", true)}}
 - **Paper [optional]:** {{ paper | default("[More Information Needed]", true)}}
@@ -31,106 +40,89 @@
 
 ## Uses
 
-<!-- Address questions around how the model is intended to be used, including the foreseeable users of the model and those affected by the model. -->
+You need to use the link for The Haar Cascade classifie that have been added to github.
 
 ### Direct Use
 
-<!-- This section is for the model use without fine-tuning or plugging into a larger ecosystem/app. -->
+Go to my model.
 
-{{ direct_use | default("[More Information Needed]", true)}}
 
 ### Downstream Use [optional]
 
-<!-- This section is for the model use when fine-tuned for a task, or when plugged into a larger ecosystem/app -->
-
-{{ downstream_use | default("[More Information Needed]", true)}}
+-
 
 ### Out-of-Scope Use
 
-<!-- This section addresses misuse, malicious use, and uses that the model will not work well for. -->
+The model will not wok well for low GPU and google colab.
 
-{{ out_of_scope_use | default("[More Information Needed]", true)}}
 
 ## Bias, Risks, and Limitations
 
-<!-- This section is meant to convey both technical and sociotechnical limitations. -->
 
-{{ bias_risks_limitations | default("[More Information Needed]", true)}}
 
 ### Recommendations
 
-<!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
 
-{{ bias_recommendations | default("Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.", true)}}
 
 ## How to Get Started with the Model
 
-Use the code below to get started with the model.
+Go to file my model and run the codes.
 
-{{ get_started_code | default("[More Information Needed]", true)}}
 
 ## Training Details
 
 ### Training Data
 
-<!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
+Training data will be import it from the files, it is recommended to change the name of the folders to 1-7 from A to Z.
 
-{{ training_data | default("[More Information Needed]", true)}}
 
 ### Training Procedure
 
-<!-- This relates heavily to the Technical Specifications. Content here should link to that section when it is relevant to the training procedure. -->
+The training procedure can be 1-15 then can be increaed to 25
 
 #### Preprocessing [optional]
 
-{{ preprocessing | default("[More Information Needed]", true)}}
 
 
 #### Training Hyperparameters
 
-- **Training regime:** {{ training_regime | default("[More Information Needed]", true)}} <!--fp32, fp16 mixed precision, bf16 mixed precision, bf16 non-mixed precision, fp16 non-mixed precision, fp8 mixed precision -->
+the most important parametere is learning batch and activation fuunction which is 15 and ReLu function.
 
 #### Speeds, Sizes, Times [optional]
 
-<!-- This section provides information about throughput, start/end time, checkpoint size if relevant, etc. -->
+Training the data may take about 1 to 2 hour according to the GPU.
 
-{{ speeds_sizes_times | default("[More Information Needed]", true)}}
 
 ## Evaluation
 
-<!-- This section describes the evaluation protocols and provides the results. -->
+Open the online stream video and watch your face and test it.
 
 ### Testing Data, Factors & Metrics
 
 #### Testing Data
 
-<!-- This should link to a Dataset Card if possible. -->
+it can be tesed it accoring to test data.
 
 {{ testing_data | default("[More Information Needed]", true)}}
 
 #### Factors
 
-<!-- These are the things the evaluation is disaggregating by, e.g., subpopulations or domains. -->
 
 {{ testing_factors | default("[More Information Needed]", true)}}
 
 #### Metrics
 
-<!-- These are the evaluation metrics being used, ideally with a description of why. Decision tresholds, model performance measures -->
+Be attention for the photos quality.
 
-{{ testing_metrics | default("[More Information Needed]", true)}}
 
 ### Results
 
-{{ results | default("[More Information Needed]", true)}}
+Model gave 0.5 accuracy for this data. it can be increased.
 
-#### Summary
 
-{{ results_summary | default("", true) }}
 
 ## Model Examination [optional]
 
-<!-- Relevant interpretability work for the model goes here -->
 
 {{ model_examination | default("[More Information Needed]", true)}}
 
@@ -139,34 +131,20 @@ Use the code below to get started with the model.
 
 ### Model Architecture and Objective
 
-{{ model_specs | default("[More Information Needed]", true)}}
+{{ model_specs | The Haar Cascade classifie}}
 
 ### Compute Infrastructure
 
-{{ compute_infrastructure | default("[More Information Needed]", true)}}
+{{ compute_infrastructure | about 1 hour }}
 
 #### Hardware
 
-{{ hardware_requirements | default("[More Information Needed]", true)}}
+{{ hardware_requirements | C and D }}
 
 #### Software
 
-{{ software | default("[More Information Needed]", true)}}
+{{ software | Google colab will not work, vs code}}
 
-## Citation [optional]
-
-<!-- If there is a paper or blog post introducing the model, the APA and Bibtex information for that should go in this section. -->
-
-
-## Glossary [optional]
-
-<!-- If relevant, include terms and calculations in this section that can help readers understand the model or model card. -->
-
-{{ glossary | default("[More Information Needed]", true)}}
-
-## More Information [optional]
-
-{{ more_information | default("[More Information Needed]", true)}}
 
 
 
